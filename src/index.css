@@ -1,0 +1,82 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", "Helvetica Neue", Arial, sans-serif;
+  
+  --color-background: var(--background);
+  --color-on-background: var(--on-background);
+  --color-surface: var(--surface);
+  --color-on-surface: var(--on-surface);
+  --color-on-surface-variant: var(--on-surface-variant);
+  --color-surface-container-lowest: var(--surface-container-lowest);
+  --color-surface-container-low: var(--surface-container-low);
+  --color-surface-container: var(--surface-container);
+  --color-surface-container-high: var(--surface-container-high);
+  --color-surface-container-highest: var(--surface-container-highest);
+  
+  --color-primary: var(--primary);
+  --color-on-primary: var(--on-primary);
+  --color-primary-container: var(--primary-container);
+  --color-on-primary-container: var(--on-primary-container);
+  
+  --color-secondary: var(--secondary);
+  --color-on-secondary: var(--on-secondary);
+  --color-secondary-container: var(--secondary-container);
+  --color-on-secondary-container: var(--on-secondary-container);
+
+  --color-outline: var(--outline);
+  --color-outline-variant: var(--outline-variant);
+  
+  --color-error: var(--error);
+  --color-error-container: var(--error-container);
+  --color-on-error-container: var(--on-error-container);
+}
+
+@layer base {
+  :root {
+    --background: #050505;
+    --on-background: #FFFFFF;
+    --surface: #121212;
+    --on-surface: #FFFFFF;
+    --on-surface-variant: rgba(255, 255, 255, 0.4);
+    --surface-container-lowest: #050505;
+    --surface-container-low: #0a0a0a;
+    --surface-container: #121212;
+    --surface-container-high: #1C1C1C;
+    --surface-container-highest: #262626;
+    
+    --primary: #D4AF37;
+    --on-primary: #050505;
+    --primary-container: rgba(212, 175, 55, 0.1);
+    --on-primary-container: #D4AF37;
+    
+    --secondary: #FFFFFF;
+    --on-secondary: #050505;
+    --secondary-container: rgba(255, 255, 255, 0.1);
+    --on-secondary-container: #FFFFFF;
+
+    --outline: rgba(255, 255, 255, 0.08);
+    --outline-variant: rgba(255, 255, 255, 0.04);
+    
+    --error: #FF4545;
+    --error-container: rgba(255, 69, 69, 0.1);
+    --on-error-container: #FF4545;
+  }
+
+  body {
+    @apply bg-background text-on-background font-sans antialiased;
+  }
+}
+
+@utility gold-glow-radial {
+  background: radial-gradient(circle at top right, rgba(212, 175, 55, 0.05), transparent 50%);
+}
+
+@utility glass-surface {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(20px);
+}
+
+@utility sovereign-shadow {
+  box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.4);
+}
